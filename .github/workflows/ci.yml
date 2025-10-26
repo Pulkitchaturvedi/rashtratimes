@@ -14,9 +14,10 @@ jobs:
         with:
           node-version: 20
           cache: 'pnpm'
-      - uses: pnpm/action-setup@v2
-        with:
-          version: 8.15.4
+      - name: Setup pnpm via Corepack
+        run: |
+          corepack enable
+          corepack prepare pnpm@8.15.4 --activate
       - run: pnpm install --frozen-lockfile
       - run: pnpm lint
       - run: pnpm build

@@ -1,0 +1,25 @@
+{
+  "name": "rashtratimes",
+  "private": true,
+  "packageManager": "pnpm@8.15.4",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "prisma:migrate": "pnpm --filter apps/api prisma migrate dev --name",
+    "prisma:seed": "pnpm --filter apps/api prisma db seed",
+    "db:reset": "pnpm --filter apps/api prisma migrate reset --force && pnpm prisma:seed"
+  },
+  "devDependencies": {
+    "@turbo/gen": "^1.12.5",
+    "turbo": "^1.12.5",
+    "typescript": "^5.4.5",
+    "@eslint/js": "^8.57.0",
+    "typescript-eslint": "^7.8.0"
+  },
+  "pnpm": {
+    "patchedDependencies": {}
+  }
+}

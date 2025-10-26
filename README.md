@@ -11,7 +11,13 @@ A TurboRepo-powered newsroom platform featuring a Next.js App Router front-end a
 
 ## Quick Start
 
+### Prerequisites
+
+- Node.js 20 (Corepack bundled)
+- pnpm — enable via Corepack: `corepack enable pnpm` (installs the pinned version declared in `package.json`)
+
 ```bash
+corepack enable pnpm  # ensures `pnpm` is available on PATH
 pnpm install
 cp .env.example .env.local
 pnpm db:reset

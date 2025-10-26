@@ -23,7 +23,9 @@ jobs:
           key: ${{ runner.os }}-pnpm-store-${{ hashFiles('pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-pnpm-store-
-      - run: pnpm install --frozen-lockfile
+      - run: |
+          # No lockfile is committed yet, so allow pnpm to resolve dependencies dynamically.
+          pnpm install --no-frozen-lockfile
       - name: Build
         run: pnpm build
       - name: Deploy Web to Vercel
